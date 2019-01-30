@@ -4,7 +4,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-30"
 
 
 ---
@@ -175,7 +175,7 @@ In the following example, you'll use the API to create a load balancer in front 
 
 ### Example steps
 
-The example steps that follow skip the prerequisite steps of using the [IBM Cloud UI](../vpc/console-tutorial.html), [CLI](../vpc/hello-world-vpc.html) or [RIAS API](../vpc/example-code.html) to provision a VPC, subnet(s), and instances. 
+The example steps that follow skip the prerequisite steps of using the [IBM Cloud UI](../vpc/console-tutorial.html), [CLI](../vpc/hello-world-vpc.html) or [RIAS API](../vpc/api-doc-wrapper.html) to provision a VPC, subnet(s), and instances. 
 
 
 The load balancer example steps can also be run using the [CLI](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html#load-balancers).
