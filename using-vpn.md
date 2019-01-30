@@ -44,7 +44,7 @@ For the current {{site.data.keyword.cloud}} VPC release, only policy-based routi
 
 ## APIs available
 
-The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](../vpc/api-doc-wrapper.html) page for more details.
+The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](https://{DomainName}/docs/infrastructure/vpc/api-doc-wrapper.html) page for more details.
 
 ### VPN gateways and VPN connections
 
@@ -324,7 +324,7 @@ Sample output:
 
 ## Quotas
 
-See our [VPC Quotas](../vpc/vpc-quotas.html#vpn-quotas) topic for VPN quotas.
+See our [VPC Quotas](https://{DomainName}/docs/infrastructure/vpc/vpc-quotas.html#vpn-quotas) topic for VPN quotas.
 
 ## Policy auto-negotiation
 
