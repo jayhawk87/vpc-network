@@ -28,7 +28,7 @@ You can keep your VPC and workloads secure by controlling network traffic using 
 
 ## Terminology
 
-This [glossary](../vpc/vpc-glossary.html) provides definitions and descriptions of ACLs and SGs, and the actions you can perform with them. The section that follows describes basic functionality of ACLs and security groups, and how VPC supports end-to-end encryption.
+This [glossary](https://{DomainName}/docs/infrastructure/vpc/vpc-glossary.html) provides definitions and descriptions of ACLs and SGs, and the actions you can perform with them. The section that follows describes basic functionality of ACLs and security groups, and how VPC supports end-to-end encryption.
 
 ### Access Control List
 An **Access Control List (ACL)** can manage (that is, it can allow or deny) inbound and outbound traffic for a subnet. An ACL is stateless, which means that inbound and outbound rules must be specified separately and explicitly. Each ACL consists of rules, based upon a *source IP*, *source port*, *destination IP*, *destination port*, and *protocol*.
