@@ -2,7 +2,6 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="vpc-network" audience="service" arm="4135753" href="/docs/infrastructure/vpc-network/getting-started.html" path="infrastructure/vpc-network"}
-
 Networking for Virtual Private Cloud (VPC)
 
     {: .navgroup id="learn"}
