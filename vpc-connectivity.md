@@ -32,7 +32,7 @@ As shown in the figure:
 
 ## Terminology
 
-This [glossary](../vpc/vpc-glossary.html) contains definitions and information about terms used in this document for IBM Cloud VPC.
+This [glossary](https://{DomainName}/docs/infrastructure/vpc/vpc-glossary.html) contains definitions and information about terms used in this document for IBM Cloud VPC.
 
 ## Characteristics of subnets in the VPC
 
