@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017,2018, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-30"
 
 
 ---
@@ -44,7 +44,7 @@ For the current {{site.data.keyword.cloud}} VPC release, only policy-based routi
 
 ## APIs available
 
-The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](https://{DomainName}/apidocs/rias#retrieves-all-ike-policies) page for more details.
+The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](../vpc/api-doc-wrapper.html) page for more details.
 
 ### VPN gateways and VPN connections
 
