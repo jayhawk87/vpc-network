@@ -40,5 +40,5 @@ Networking for Virtual Private Cloud (VPC)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    [Getting help and support](/docs/infrastructure/vpc/getting-help.html)
+    [Getting help and support](https://cloud.ibm.com/docs/infrastructure/vpc/getting-help.html)
     {: .navgroup-end}
