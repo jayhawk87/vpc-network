@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -12,14 +12,15 @@ lastupdated: "2019-01-16"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note .note}
 {:important .important}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Getting started with Networking for Virtual Private Cloud
 
-The Beta program has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product availability announcements.
-{: important}
+**The Beta program has closed, access is no longer available. Thank you for your interest, your participation, and your feedback. Stay tuned for product availability announcements.**
+{: note}
 
 
 To get started with {{site.data.keyword.cloud}} Networking for Virtual Private Cloud
@@ -38,7 +39,7 @@ The provisioning and managing of VPC network resources can be done through the U
 
 * For access through the user interface, log into the [IBM Cloud Console ![External link icon](../../icons/launch-glyph.svg "External link icon")]( https://{DomainName}/vpc){: new_window}. Follow the [UI guide](../vpc/console-tutorial.html) if you need help.
 * To use the command line interface, use the [infrastructure-service](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html) plugin of the [IBM Cloud CLI ![External link icon](../../icons/launch-glyph.svg "External link icon")](/docs/cli/reference/bluemix_cli/get_started.html#getting-started){: new_window} and follow the [Hello World](../vpc/hello-world-vpc.html) example.
-* For more advanced users, you can call the [REST APIs](https://{DomainName}/apidocs/rias) directly. Follow the [example code](../vpc/example-code.html) tutorial to get started with the REST APIs.
+* For more advanced users, you can call the [REST APIs](../vpc/api-doc-wrapper.html) directly. Follow the [example code](../vpc/example-code.html) tutorial to get started with the REST APIs.
 
 ## Next steps
 
