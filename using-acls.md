@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-30"
 
 ---
 
@@ -36,7 +36,7 @@ The example given in this document shows how to create network ACLs in your VPC,
 
 You can set up and manage ACLs through the API or through the CLI, as you prefer.
 
-* See the [API Reference](https://{DomainName}/apidocs/rias) for the parameters, request body, and response details for each API.
+* See the [API Reference](https://{DomainName}/docs/infrastructure/vpc/api-doc-wrapper.html) for the parameters, request body, and response details for each API.
 
 * See this [CLI example](../vpc/hello-world-vpc.html) to get command details, steps for installing the CLI plugin, and the prerequisite steps of using the VPC CLI.
 
