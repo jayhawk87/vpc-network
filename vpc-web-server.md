@@ -21,7 +21,7 @@ This document takes you through some example steps for setting up communcation b
 
 ## Prerequisites
 
-Before you can set up communication between web servers in your VPC, you must have already created a VPC with TWO subnets and at least TWO instances available in each subnet. You'll need to know the IDs of the VPC, subnets, and instances. Follow the steps in our [guide to creating VPC resources](../vpc/hello-world-vpc.html) if you need help setting up this configuration.
+Before you can set up communication between web servers in your VPC, you must have already created a VPC with TWO subnets and at least TWO instances available in each subnet. You'll need to know the IDs of the VPC, subnets, and instances. Follow the steps in our [guide to creating VPC resources](https://{DomainName}/docs/infrastructure/vpc/hello-world-vpc.html) if you need help setting up this configuration.
 
 ## Scenario 1: Connectivity between servers in the same zone but different subnets
 
