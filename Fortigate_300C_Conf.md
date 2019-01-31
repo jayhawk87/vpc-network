@@ -20,7 +20,7 @@ lastupdated: "2019-01-23"
 
 This document is based on FortiGate 300C, Firmware Version	v5.2.13, build762 (GA).
 
-The example steps that follow skip the prerequisite steps of using {{site.data.keyword.cloud}} API or CLI to create Virtual Private Clouds. For more information, see [Getting Started](https://{DomainName}/docs/infrastruture/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc/example-code.md).
+The example steps that follow skip the prerequisite steps of using {{site.data.keyword.cloud}} API or CLI to create Virtual Private Clouds. For more information, see [Getting Started](https://{DomainName}/docs/infrastruture/vpc/getting-started.html) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc/example-code.html).
 
 ## Example steps
 The topology for connecting to the remote FortiGate peer is similar to creating a VPN connection between two VPCs. However, one side is replaced by the FortiGate 300C unit.
