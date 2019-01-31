@@ -92,16 +92,16 @@ The default health check interval is 5 seconds, the default timeout against a he
 
 For all incoming HTTPS connections, the load balancer service terminates the SSL connection and establishes a plain-text HTTP communication with the back-end server instance. With this technique, CPU-intensive SSL handshakes and encryption or decryption tasks are shifted away from the back-end server instances, thereby allowing them to use all their CPU cycles for processing application traffic.
 
-An SSL certificate is required for the load balancer to perform SSL offloading tasks. You may manage the SSL certificates through [IBM Certificate Manager](../../../catalog/services/certificate-manager).
+An SSL certificate is required for the load balancer to perform SSL offloading tasks. You may manage the SSL certificates through [IBM Certificate Manager ![External link icon](../icons/launch-glyph.svg "External link icon")](../../../catalog/services/certificate-manager){: new_window}.
 
-If you need load balancer access to the SSL certificate in your certificate manager instance, create an authorization that gives the load balancer service instance access to the certificate manager instance that contains the SSL certificate. You may manage such an authorization through [Identity and Access Authorizations](../../../iam/#/authorizations). Please make sure to choose **Infrastructure Service** as the source service, **Load Balancer for VPC** as the resource type, **Certificate Manager** as the target service, and assign the **Writer** service access role. To create a load balancer, you must grant **All resource instances** authorization for the source resource instance. The target service instance may be **All instances**, or it may be or your specific certificate manager resource instance.
+If you need load balancer access to the SSL certificate in your certificate manager instance, create an authorization that gives the load balancer service instance access to the certificate manager instance that contains the SSL certificate. You may manage such an authorization through [Identity and Access Authorizations ![External link icon](../icons/launch-glyph.svg "External link icon")](../../../iam/#/authorizations){: new_window}. Please make sure to choose **Infrastructure Service** as the source service, **Load Balancer for VPC** as the resource type, **Certificate Manager** as the target service, and assign the **Writer** service access role. To create a load balancer, you must grant **All resource instances** authorization for the source resource instance. The target service instance may be **All instances**, or it may be or your specific certificate manager resource instance.
 
 If the required authorization is removed, errors may occur for your load balancer.
 {: note}
 
 ## Identity and access management (IAM)
 
-You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, please visit [Identity and Access Users](https://{DomainName}/iam/#/users).
+You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, please visit [Identity and Access Authorizations ![External link icon](../icons/launch-glyph.svg "External link icon")](../../../iam/#/authorizations){: new_window}.
 
 ### Configuring resource group access policies for users
 
