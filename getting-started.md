@@ -12,8 +12,8 @@ lastupdated: "2019-02-12"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
-{:note .note}
-{:important .important}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 {:DomainName: data-hd-keyref="DomainName"}
 
