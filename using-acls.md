@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -36,20 +36,20 @@ The example given in this document shows how to create network ACLs in your VPC,
 
 You can set up and manage ACLs through the API or through the CLI, as you prefer.
 
-* See the [API Reference](https://{DomainName}/docs/infrastructure/vpc/api-doc-wrapper.html) for the parameters, request body, and response details for each API.
+* See the [API Reference](https://{DomainName}/apidocs/rias) for the parameters, request body, and response details for each API.
 
-* See this [CLI example](../vpc/hello-world-vpc.html) to get command details, steps for installing the CLI plugin, and the prerequisite steps of using the VPC CLI.
+* See this [CLI example](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli) to get command details, steps for installing the CLI plugin, and the prerequisite steps of using the VPC CLI.
 
 ## Working with ACLs and ACL rules
 
-To make your ACLs effective, you'll create rules that determine how to handle your inbound and outbound network traffic. You can create multiple inbound and outbound rules. See [Quotas](https://{DomainName}/docs/infrastructure/vpc/vpc-quotas.html) for specific information about how many rules you can create.
+To make your ACLs effective, you'll create rules that determine how to handle your inbound and outbound network traffic. You can create multiple inbound and outbound rules. See [Quotas](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-quotas) for specific information about how many rules you can create.
 
 * With inbound and outbound rules, you can allow or deny traffic from a source IP range or to a destination IP range, with specified protocols and ports.  
 * ACL rules are considered in sequence. Low-priority rules are evaluated only when the higher-priority rules do not match.
 * Inbound rules are separated from outbound rules.
 * The protocols currently supported are TCP, UDP, and ICMP. You also can use the **all** option to designate _all_ or _other_ protocols (if a rule with a higher priority is specified).
 
-For relevant information about using ICMP, TCP, and UDP protocols in your ACL rules, see [Understanding Internet Communication Protocols](https://{DomainName}/docs/infrastructure/network-infrastructure/communication-protocols.html).
+For relevant information about using ICMP, TCP, and UDP protocols in your ACL rules, see [Understanding Internet Communication Protocols](https://{DomainName}/docs/infrastructure/network-infrastructure?topic=network-infrastructure-understanding-internet-communication-protocols).
 
 ### Attaching an ACL to a subnet
 
@@ -105,7 +105,7 @@ This example illustrates general cases only. In your scenarios, you also may wan
 
 ### Example steps
 
-The following example steps skip the prerequisite steps of using the CLI to create a VPC, which must be done first. For more information, see [Creating a VPC using the CLI](../vpc/hello-world-vpc.html).
+The following example steps skip the prerequisite steps of using the CLI to create a VPC, which must be done first. For more information, see [Creating a VPC using the CLI](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli).
 
 
 #### Step 1. Create the ACLs

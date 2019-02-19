@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-01-15"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -35,7 +35,7 @@ Notice that you must create the security group first, with the `ibmcloud is sgc`
 
 This example code skips a few steps, so here's where you can find more information:
 
- * Instructions for creating a VPC and a subnet are available in our [Creating a VPC](../vpc/hello-world-vpc.html) topic.
+ * Instructions for creating a VPC and a subnet are available in our [Creating a VPC](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli) topic.
 
 You can copy and paste commands from this example CLI code to get you started creating a VSI that has a security group attached. System responses are not shown completely in this sample code. You'll need to update your commands with the correct resource IDs for your _VPC_, _subnet_, _image_, and _key_, and the correct _security group ID number_.
 

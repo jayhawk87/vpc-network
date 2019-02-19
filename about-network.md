@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-02-12"
 
 
 ---
@@ -13,38 +13,69 @@ lastupdated: "2019-01-16"
 {:pre: .pre}
 {:screen: .screen}
 {:tip: .tip}
+{:note: .note}
+{:important: .important}
 {:download: .download}
 
 # About Networking for VPC
 
 A Virtual Private Cloud (VPC) is a virtual network that's tied to your customer account. It gives you cloud security, with the ability to scale dynamically, by providing fine-grained control over your virtual infrastructure and your network traffic segmentation.
 
-In this document, you'll find concepts that describe use cases and capabilities within {{site.data.keyword.cloud}} VPC for subnets, Floating IP addresses, and VPN connections.
+This document covers some networking concepts as they are applied within {{site.data.keyword.cloud}} VPC. The use cases and characteristics described include:
 
-**Figure: A customer can subdivide a Virtual Private Cloud with subnets, and each subnet can reach the public internet, if desired.**
+* regions
+* zones
+* reserved IP addresses
+* public gateways
+* vNIC interfaces
+* subnets
+* floating IP addresses
+* VPN connections
+
+## Overview
+
+To set up networking in your VPC:
+* Use a public gateway for subnet Internet traffic.
+* Use a Floating IP for VSI Internet traffic.
+* Use a VPN for secure external connectivity.
+
+Remember:
+* Some subnet address CIDR ranges are reserved by IBM.
+* You must create your VPC before you create subnets within that VPC.
+* IPv6 support is not available.
+
+Optionally, you can create a Classic access VPC to connect to your IBM Cloud Classic Infrastructure.
+{:note}
+
+As shown in the following figure:
+* Subnets in your VPC can connect to the public internet through an optional Public Gateway (PGW).
+* You can assign a Floating IP address (FIP) to any VSI to reach it from the Internet, or vice versa.
+* Subnets within the IBM Cloud VPC offer private connectivity; they can talk to each other over a private link, through the implicit router. Setting up routes is not necessary.
+
+
+**Figure: A customer can subdivide a Virtual Private Cloud with subnets, and each subnet can reach the public Internet, if desired.**
 
 ![VPC Connectivity](/images/vpc-connectivity-and-security.png)
 
-As shown in the figure:
-
-* Subnets can connect to the public internet through an optional Public Gateway (PGW).
-* You can assign a Floating IP address (FIP) to any VSI to reach it from the internet, or vice versa.
-* Subnets in the IBM Cloud VPC offer private connectivity; they can talk to each other over a private link. Setting up routes is not necessary.
-
 ## Terminology
 
-This [glossary](../vpc/vpc-glossary.html) contains definitions and information about terms used in this document for IBM Cloud VPC.
+This [glossary](/docs/infrastructure/vpc?topic=vpc-vpc-glossary#vpc-glossary) contains definitions and information about terms used in this document for IBM Cloud VPC. When working with your VPC, you'll need to be familiar with the basic concepts of _region_ and _zone_ as they apply to your deployment.
+
+### Regions
+
+A region is an abstraction related to the geographic area in which a VPC is deployed. Each region contains multiple zones, which represent independent fault domains. An IBM Cloud VPC may span multiple zones within its assigned region.
+
+### Zones
+
+A zone is an abstraction that refers to the physical data center that hosts the compute, network, and storage resources, as well as the related cooling and power, which provides services and applications. Zones are isolated from each other, so to create no shared single point of failure, improved fault tolerance, and decreased latency. A zone guarantees the following properties:
+
+ * Each zone is an independent fault domain, and it is extremely unlikely for two zones in a region to fail simultaneously.
+ * Traffic between zones in a region will have less than 2ms of latency.
 
 ## Characteristics of subnets in the VPC
 
 A subnet consists of a specified IP address range (CIDR block). Subnets are bound to a single zone, and they cannot span multiple zones or regions. However, a subnet can span the entirety of the zone abstractions within their Virtual Private Cloud. Subnets in the same IBM Cloud VPC are connected to each other.
 
-### Zones
-
-A zone is an abstraction designed to assist with improved fault tolerance and decreased latency. A zone guarantees the following properties:
-
- * Each zone is an independent fault domain and it is extremely unlikely for two zones in a region to fail simultaneously
- * Traffic between zones in a region will have less than 2ms of latency
 
 ### Reserved IP Addresses
 
@@ -66,7 +97,8 @@ The following figure summarizes the current scope of gateway services.
 
 ![gateway services](images/scope-of-gateway-services.png)
 
-**Note:**  A public gateway is created in a VPC, but the gateway does nothing until it is attached to a subnet. You can create only one public gateway per zone, which means for example that you could have 3 public gateways per VPC in an environment with 3 zones.
+A public gateway is created in a VPC, but the gateway does nothing until it is attached to a subnet. You can create only one public gateway per zone, which means for example that you could have 3 public gateways per VPC in an environment with 3 zones.
+{:note}
 
 ### Use a Floating IP address for external connectivity of a VSI 
 **Floating IP addresses** are IP addresses that are provided by the system and are reachable from the public internet.
@@ -94,12 +126,9 @@ Virtual Private Network (VPN) service is available for users to connect to their
   * Continuous monitoring of VPN connection health.
   * Support for both initiator and responder modes; that is, traffic may be initiated from either side of the tunnel.
 
-
-## Known Limitations
-
-For a list of known limitations and features not currently supported, please refer to the [Known Limitations](../vpc/known-limitations.html) document.
+For a list of known limitations and features not currently supported, please refer to the [Known Limitations](/docs/infrastructure/vpc?topic=vpc-known-limitations) document.
 
 ## Learn More
 
-   * [IBM VPC security](vpc-security.html)
-   * [IBM VPC addresses, regions, and subnets](vpc-regions-and-subnets.html)
+   * [IBM VPC security](/docs/infrastructure/vpc-network?topic=vpc-network-security-in-your-ibm-cloud-vpc)
+   * [IBM VPC addresses, regions, and subnets](/docs/infrastructure/vpc-network?topic=vpc-network-working-with-ip-address-ranges-address-prefixes-regions-and-subnets)

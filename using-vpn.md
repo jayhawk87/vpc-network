@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017,2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 
 ---
@@ -44,7 +44,7 @@ For the current {{site.data.keyword.cloud}} VPC release, only policy-based routi
 
 ## APIs available
 
-The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](https://{DomainName}/docs/infrastructure/vpc/api-doc-wrapper.html) page for more details.
+The following section gives details about APIs you can use for VPN in your IBM Cloud VPC environment. Please see the [VPC REST APIs](https://{DomainName}/apidocs/rias#retrieves-all-ike-policies) page for more details.
 
 ### VPN gateways and VPN connections
 
@@ -100,9 +100,9 @@ Here is what the scenario looks like (with some VMs added in each VPC):
 
 ### Example steps
 
-The example steps that follow skip the prerequisite steps of using IBM Cloud API or CLI to create VPCs. For more information, see [Getting Started](getting-started.html) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc/example-code.html).
+The example steps that follow skip the prerequisite steps of using IBM Cloud API or CLI to create VPCs. For more information, see [Getting Started](/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
 
-Optionally, you can create a VPN gateway using the UI. Steps can be found in the [Console Tutorial document](https://{DomainName}/docs/infrastructure/vpc/console-tutorial.html#creating-a-vpn).
+Optionally, you can create a VPN gateway using the UI. Steps can be found in the [Console Tutorial document](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#creating-a-vpn).
 
 #### Step 1. Create a VPN gateway in your VPC subnet
 
@@ -324,7 +324,7 @@ Sample output:
 
 ## Quotas
 
-See our [VPC Quotas](https://{DomainName}/docs/infrastructure/vpc/vpc-quotas.html#vpn-quotas) topic for VPN quotas.
+See our [VPC Quotas](/docs/infrastructure/vpc?topic=vpc-quotas#vpn-quotas) topic for VPN quotas.
 
 ## Policy auto-negotiation
 

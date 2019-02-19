@@ -4,7 +4,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-30"
+lastupdated: "2019-01-24"
 
 
 ---
@@ -92,16 +92,16 @@ The default health check interval is 5 seconds, the default timeout against a he
 
 For all incoming HTTPS connections, the load balancer service terminates the SSL connection and establishes a plain-text HTTP communication with the back-end server instance. With this technique, CPU-intensive SSL handshakes and encryption or decryption tasks are shifted away from the back-end server instances, thereby allowing them to use all their CPU cycles for processing application traffic.
 
-An SSL certificate is required for the load balancer to perform SSL offloading tasks. You may manage the SSL certificates through [IBM Certificate Manager](../../../catalog/services/certificate-manager).
+An SSL certificate is required for the load balancer to perform SSL offloading tasks. You may manage the SSL certificates through [IBM Certificate Manager ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/services/certificate-manager?topic=certificate-manager-gettingstarted){: new_window}.
 
-If you need load balancer access to the SSL certificate in your certificate manager instance, create an authorization that gives the load balancer service instance access to the certificate manager instance that contains the SSL certificate. You may manage such an authorization through [Identity and Access Authorizations](../../../iam/#/authorizations). Please make sure to choose **Infrastructure Service** as the source service, **Load Balancer for VPC** as the resource type, **Certificate Manager** as the target service, and assign the **Writer** service access role. To create a load balancer, you must grant **All resource instances** authorization for the source resource instance. The target service instance may be **All instances**, or it may be or your specific certificate manager resource instance.
+If you need load balancer access to the SSL certificate in your certificate manager instance, create an authorization that gives the load balancer service instance access to the certificate manager instance that contains the SSL certificate. You may manage such an authorization through [Identity and Access Authorizations ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/services/iam/#/authorizations){: new_window}. Please make sure to choose **Infrastructure Service** as the source service, **Load Balancer for VPC** as the resource type, **Certificate Manager** as the target service, and assign the **Writer** service access role. To create a load balancer, you must grant **All resource instances** authorization for the source resource instance. The target service instance may be **All instances**, or it may be or your specific certificate manager resource instance.
 
 If the required authorization is removed, errors may occur for your load balancer.
 {: note}
 
 ## Identity and access management (IAM)
 
-You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, please visit [Identity and Access Users](https://{DomainName}/iam/#/users).
+You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, please visit [Identity and Access Authorizations ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/services/iam/#/authorizations){: new_window}.
 
 ### Configuring resource group access policies for users
 
@@ -175,10 +175,10 @@ In the following example, you'll use the API to create a load balancer in front 
 
 ### Example steps
 
-The example steps that follow skip the prerequisite steps of using the [IBM Cloud UI](../vpc/console-tutorial.html), [CLI](../vpc/hello-world-vpc.html) or [RIAS API](../vpc/api-doc-wrapper.html) to provision a VPC, subnet(s), and instances. 
+The example steps that follow skip the prerequisite steps of using the [IBM Cloud UI](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console), [CLI](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli) or [RIAS API](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis) to provision a VPC, subnet(s), and instances. 
 
 
-The load balancer example steps can also be run using the [CLI](/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html#load-balancers).
+The load balancer example steps can also be run using the [CLI](/docs/cli/reference/ibmcloud?topic=infrastructure-service-cli-vpc-reference#vpc-reference).
 {: note}
 
 #### Step 1. Create a load balancer with listener, pool, and attached server instances (members)

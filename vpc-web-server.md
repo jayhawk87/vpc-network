@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-16"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -21,7 +21,7 @@ This document takes you through some example steps for setting up communcation b
 
 ## Prerequisites
 
-Before you can set up communication between web servers in your VPC, you must have already created a VPC with TWO subnets and at least TWO instances available in each subnet. You'll need to know the IDs of the VPC, subnets, and instances. Follow the steps in our [guide to creating VPC resources](https://{DomainName}/docs/infrastructure/vpc/hello-world-vpc.html) if you need help setting up this configuration.
+Before you can set up communication between web servers in your VPC, you must have already created a VPC with TWO subnets and at least TWO instances available in each subnet. You'll need to know the IDs of the VPC, subnets, and instances. Follow the steps in our [guide to creating VPC resources with the CLI](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli) if you need help setting up this configuration.
 
 ## Scenario 1: Connectivity between servers in the same zone but different subnets
 
@@ -155,4 +155,4 @@ This means you have got a connection between instances 3 and 1, but not 2.
 
 ## Next steps
 
-You'll want to protect your servers by making some ACL rules that control inbound traffic, as shown [in our guide to using ACLs in VPC](https://{DomainName}/docs/infrastructure/vpc-network/using-acls.html)
+You'll want to protect your servers by making some ACL rules that control inbound traffic, as shown [in our guide to using ACLs in VPC](https://{DomainName}/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-network-acls-using-the-cli).

@@ -27,10 +27,10 @@ Rules are _stateful_, which means that reverse traffic in response to allowed tr
 
 Security groups are scoped to a single VPC. This scoping implies that security group can be attached _only_ to network interfaces of VSIs within the same VPC.
 
-When a VSI is created without any security groups specified, the VSI's primary network interface is put into the _default_ security group of that VSI's VPC. This {{site.data.keyword.cloud}} VPC release has defined a default security group that does allow certain traffic. For more information, see [Updating the default security group](/docs/infrastructure/vpc-network/security-groups-default.html).
+When a VSI is created without any security groups specified, the VSI's primary network interface is put into the _default_ security group of that VSI's VPC. This {{site.data.keyword.cloud}} VPC release has defined a default security group that does allow certain traffic. For more information, see [Updating the default security group](/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group).
 
 You can set up security groups by using the REST API, CLI, or UI:
 
-* [Setting up security groups using the API](/docs/infrastructure/vpc-network/security-group-usage-examples.html)
-* [Setting up security groups using the CLI](/docs/infrastructure/vpc-network/security-groups-example.html)
-* [Setting up security groups using the UI](/docs/infrastructure/vpc?topic=vpc-configuring-the-security-group-for-the-instance)
+* [Setting up security groups using the API](/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-security-groups-using-the-apis)
+* [Setting up security groups using the CLI](/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-security-groups-using-the-cli)
+* [Setting up security groups using the UI](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#configuring-the-security-group-for-the-instance)

@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-17"
+lastupdated: "2019-01-24"
 
 
 ---
@@ -22,9 +22,9 @@ lastupdated: "2019-01-17"
 
 Use these comprehensive guides to begin building and customizing your {{site.data.keyword.cloud}} VPC, one step at a time.
 
-* [Using the IBM Cloud console to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc/console-tutorial.html)
-* [Using the IBM Cloud CLI to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc/hello-world-vpc.html)
-* [Using the REST API to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc/example-code.html)
-* [How to connect to IBM Cloud Object Storage from your VPC](http://{DomainName}/docs/infrastructure/vpc/connect-to-cos.html)
+* [Using the IBM Cloud console to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console)
+* [Using the IBM Cloud CLI to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-cli)
+* [Using the REST API to create and manage VPC resources](http://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis)
+* [How to connect to IBM Cloud Object Storage from your VPC](http://{DomainName}/docs/infrastructure/vpc?topic=vpc-connecting-to-ibm-cloud-object-storage-from-a-vpc)
  
    

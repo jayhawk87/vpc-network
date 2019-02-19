@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-15"
+lastupdated: "2019-01-24"
 
 ---
 
@@ -22,7 +22,7 @@ The following example demonstrates how to create and manage security groups, usi
 
 To use security groups, first you must have a running IBM Cloud VPC.
 
-Instructions for creating a VPC and a subnet are available in our [Creating a VPC](../vpc/example-code.html) topic.
+Instructions for creating a VPC and a subnet are available in our [Creating a VPC](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis) topic.
 
 ## Step 1: Create a security group
 

@@ -1,12 +1,13 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="vpc-network" audience="service" arm="4135753" href="/docs/infrastructure/vpc-network/getting-started.html" path="infrastructure/vpc-network"}
+{: .toc subcollection="vpc-network" audience="service" arm="4135753" href="/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud" path="infrastructure/vpc-network"}
 Networking for Virtual Private Cloud (VPC)
 
     {: .navgroup id="learn"}
     getting-started.md
     about-network.md
+    vpc-networking-concepts.md
     vpc-security.md
     vpc-regions-and-subnets.md
     {: .navgroup-end}
@@ -36,10 +37,11 @@ Networking for Virtual Private Cloud (VPC)
 
     {: .navgroup id="reference"}
     api-doc-wrapper.md
-    [CLI Reference for VPC](https://cloud.ibm.com/docs/infrastructure-service-cli-plugin/vpc-cli-reference.html#vpc-reference)
+    /infrastructure-service-cli-plugin/infrastructure-service-cli-plugin-vpc-cli-reference
     step-by-step-pages.md
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    [Getting help and support](https://cloud.ibm.com/docs/infrastructure/vpc/getting-help.html)
+    /vpc/vpc-gettinghelp
     {: .navgroup-end}
+

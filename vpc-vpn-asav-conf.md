@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-18"
+lastupdated: "2019-01-23"
 
 ---
 
@@ -18,7 +18,7 @@ lastupdated: "2019-01-18"
 
 This document is based on Cisco ASAv, Cisco Adaptive Security Appliance Software Version 9.10(1).
 
-The example steps that follow skip the prerequsite steps of using the {{site.data.keyword.cloud}} API or CLI to create VPCs. For more information, see [Getting Started](https://{DomainName}/docs/infrastructure/vpc/getting-started.html) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc/example-code.html).
+The example steps that follow skip the prerequisite steps of using {{site.data.keyword.cloud}} API or CLI to create Virtual Private Clouds. For more information, see [Getting Started](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
 
 ## Example steps
 The topology for connecting to the remote Cisco ASAv peer is similar to creating a VPN connection between two {{site.data.keyword.cloud}} Virtual Private Clouds. However, one side is replaced by the Cisco ASAv unit.
