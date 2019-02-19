@@ -42,6 +42,6 @@ Networking for Virtual Private Cloud (VPC)
     {: .navgroup-end}
 
     {: .navgroup id="help"}
-    /vpc/vpc-gettinghelp
+    /vpc/vpc-getting-help-and-support
     {: .navgroup-end}
 
