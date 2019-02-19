@@ -37,7 +37,20 @@ Networking for Virtual Private Cloud (VPC)
 
     {: .navgroup id="reference"}
     api-doc-wrapper.md
-    /infrastructure-service-cli-plugin/infrastructure-service-cli-plugin-vpc-cli-reference
+    [CLI Reference for VPC](https://cloud.ibm.com/docs/infrastructure-service-cli-plugin?topic=infrastructure-service-cli-plugin-vpc-cli-reference)
+    step-by-step-pages.md
+    vpc-endpoints.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    faq.md
+    known-limitations.md
+    troubleshooting.md
+    quick-guide-to-resources.md
+    errors.md
+    getting-help.md
+    {: .navgroup-end}
+
     step-by-step-pages.md
     {: .navgroup-end}
 
