@@ -31,6 +31,6 @@ When a VSI is created without any security groups specified, the VSI's primary n
 
 You can set up security groups by using the REST API, CLI, or UI:
 
-* [Setting up security groups using the API](docs/infrastructure/vpc-network/security-group-usage-examples.html)
+* [Setting up security groups using the API](/docs/infrastructure/vpc-network/security-group-usage-examples.html)
 * [Setting up security groups using the CLI](/docs/infrastructure/vpc-network/security-groups-example.html)
-* [Setting up security groups using the UI](/docs/infrastructure/vpc/console-tutorial.html#configuring-the-security-group-for-the-instance)
+* [Setting up security groups using the UI](/docs/infrastructure/vpc?topic=vpc-configuring-the-security-group-for-the-instance)
