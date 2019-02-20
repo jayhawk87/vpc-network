@@ -21,4 +21,4 @@ Access to {{site.data.keyword.cloud}} Virtual Private Cloud APIs require account
 
 If the following link does not open the API Reference, switch to an account that has been onboarded. The link will open in a new tab or window.
 
-* [API Reference]((https://{DomainName}/apidocs/rias)){: new_window}
+* [API Reference](https://{DomainName}/apidocs/rias){: new_window}
