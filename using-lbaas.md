@@ -69,8 +69,8 @@ As an example, if three application servers A, B and C, have weights customized 
 
 **Additional characteristics of these methods:**
 
-    * Re-setting a server weight to '0' means no new connections are forwarded to that server, but any existing traffic will continue to flow as long as it is active. Using a weight of '0' can help bring down a server gracefully and remove it from service rotation.
-    * The server weight values are applicable only with the weighted round-robin method. They are ignored with round-robin and least connections load balancing methods.
+* Re-setting a server weight to '0' means no new connections are forwarded to that server, but any existing traffic will continue to flow as long as it is active. Using a weight of '0' can help bring down a server gracefully and remove it from service rotation.
+* The server weight values are applicable only with the weighted round-robin method. They are ignored with round-robin and least connections load balancing methods.
 
 
 ## Health Checks
