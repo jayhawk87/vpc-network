@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-19"
 
 ---
 
@@ -17,7 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Getting started with Networking for Virtual Private Cloud
-
+{: #getting-started-with-networking-for-virtual-private-cloud}
 
 IBM will be accepting a limited number of customers to participate in an Early Access program to VPC starting in early April, 2019 with expanded usage being opened in the following months. If your organization would like to gain access to IBM Virtual Private Cloud, please complete this [nomination form](https://cloud.ibm.com/vpc){: new_window} and an IBM representative will be in contact with you regarding next steps.
 {: important}
@@ -47,5 +47,5 @@ After your Virtual Private Cloud networking has been provisioned, explore more.
 * [Creating and managing virtual server instances](/docs/infrastructure/vpc?topic=vpc-creating-and-managing-virtual-server-instances)
 * [Using Security Groups](/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-security-groups-using-the-cli)
 * [Using Network ACLs](/docs/infrastructure/vpc-network?topic=vpc-network-setting-up-network-acls-using-the-cli)
-* [(Beta) Using VPN](/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-vpn-with-your-vpc)
-* [(Beta) Using Load Balancers](/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-load-balancers-in-ibm-cloud-vpc#-beta-using-load-balancers-in-ibm-cloud-vpc)
+* [(Beta) Using VPN](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-vpn-with-your-vpc)
+* [(Beta) Using Load Balancers](/docs/infrastructure/vpc-network?topic=vpc-network---beta-using-load-balancers-in-ibm-cloud-vpc#-beta-using-load-balancers-in-ibm-cloud-vpc)

@@ -29,7 +29,7 @@ As shown in the figure:
 * Subnets can connect to the public internet through an optional Public Gateway (PGW).
 * You can assign a Floating IP address (FIP) to any VSI to reach it from the internet, or vice versa.
 * Subnets in the IBM Cloud VPC offer private connectivity; they can talk to each other over a private link. You do not need to set up any routes.
-* For more information, see our [About VPC Infrastructure](docs/infrastructure/vpc?topic=vpc-about-ibm-cloud-virtual-private-cloud-vpc-infrastructure).
+* For more information, see our [About VPC Infrastructure](/docs/infrastructure/vpc?topic=vpc-about-ibm-cloud-virtual-private-cloud-vpc-infrastructure).
 
 ## Terminology
 
@@ -81,7 +81,7 @@ Your Floating IP address cannot be associated with multiple interfaces. You mus
 For more information about NAT operations, please refer to [the related Internet RFC document ![External link icon](../../icons/launch-glyph.svg "External link icon")](http://www.faqs.org/rfcs/rfc1631.html){: new_window}.
 
 ### Use VPN for secure external connectivity
-Virtual Private Network (VPN) service is available for users to connect to their IBM Cloud VPC from the internet, securely. For step-by-step instructions, please see our [IBM Console UI guide](http://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console).
+Virtual Private Network (VPN) service is available for users to connect to their IBM Cloud VPC from the internet, securely. For step-by-step instructions, please see our [IBM Console UI guide](/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console).
 
 **VPN Capabilities**
   * Ability to CRUD (Create, Read, Update and Delete) VPN service (site-to-site IPSEC VPN) for handling data transfer.
