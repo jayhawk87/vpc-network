@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -19,6 +19,7 @@ lastupdated: "2019-01-23"
 
 
 # Creating a secure connection with a remote Juniper vSRX peer
+{: #creating-a-secure-connection-with-a-remote-juniper-vsrx-peer}
 
 This document is based on Juniper vSRX, JUNOS Software Release [15.1X49-D123.3].
 

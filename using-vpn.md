@@ -4,7 +4,7 @@
 
 copyright:
   years: 2017,2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -20,6 +20,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # (Beta) Using VPN with your VPC
+{: #--beta-using-vpn-with-your-vpc}
 
 The {{site.data.keyword.cloud}} VPC VPN service allows you to connect private networks in a secure fashion. You can use VPN to set up an IPsec site-to-site tunnel between your VPC and your on-premise private network or another VPC.
 

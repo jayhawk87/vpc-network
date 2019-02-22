@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Setting up security groups using the CLI
+{: #setting-up-security-groups-using-the-cli}
 
 In the example that follows, you'll create a VSI with a security group enabled, using the command line interface (CLI). Here's what the scenario looks like.
 

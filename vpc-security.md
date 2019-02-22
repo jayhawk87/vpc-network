@@ -2,7 +2,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2019-02-12"
 {:download: .download}
 
 # Security in your IBM Cloud VPC
+{: #security-in-your-ibm-cloud-vpc}
 
 You can keep your VPC and workloads secure by controlling network traffic using security groups (SGs), using network access control lists (ACLs), or using both types of control. Security groups control traffic on a per-instance (VSI) basis and access control lists control traffic on a per-subnet basis.
 
@@ -31,7 +32,7 @@ You can keep your VPC and workloads secure by controlling network traffic using 
 ![VPC Security](/images/vpc-connectivity-and-security.png)
 
 
-## Terminology
+## Definitions
 
 This [glossary](/docs/infrastructure/vpc?topic=vpc-vpc-glossary) provides definitions and descriptions of ACLs and SGs, and the actions you can perform with them. The section that follows describes basic functionality of ACLs and security groups, and how VPC supports end-to-end encryption.
 

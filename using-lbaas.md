@@ -4,7 +4,7 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -22,12 +22,14 @@ lastupdated: "2019-01-24"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # (Beta) Using Load Balancers in IBM Cloud VPC
+{: #--beta-using-load-balancers-in-ibm-cloud-vpc}
 
 The load balancer service distributes traffic among multiple server instances within the same region for your {{site.data.keyword.cloud}} VPC.
 
 **This service is now in Beta release version. Resources used during the Beta period will not be available after the close of Beta, and no support will be available. Please direct comments and questions to your IBM Cloud sales representative.**
 
 ## Public load balancer
+{: #public-load-balancer}
 
 Your load balancer service instance is assigned a publicly-accessible, fully qualified domain name (FQDN), which you must use for access to your applications that are hosted behind the load balancer service in {{site.data.keyword.cloud}} VPC. This domain name may be registered with one or more public IP addresses.
 
@@ -53,6 +55,8 @@ The port range of 56500 to 56520 is reserved for management purposes; these port
 {: note}
 
 ## Load balancing methods
+{: #load-balancing-methods}
+
 The following three load balancing methods are available for distributing traffic among back-end application servers:
 
 * **Round-robin:** Round-robin is the default load balancing method. With this method, the load balancer forwards
@@ -72,8 +76,8 @@ As an example, if three application servers A, B and C, have weights customized 
 * Re-setting a server weight to '0' means no new connections are forwarded to that server, but any existing traffic will continue to flow as long as it is active. Using a weight of '0' can help bring down a server gracefully and remove it from service rotation.
 * The server weight values are applicable only with the weighted round-robin method. They are ignored with round-robin and least connections load balancing methods.
 
-
 ## Health Checks
+{: #health-checks}
 
 Health check definitions are mandatory for back-end pools.
 

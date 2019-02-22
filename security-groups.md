@@ -3,7 +3,7 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-02-06"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Using security groups
+{: #using-security-groups}
 
 Security groups give you a convenient way to apply rules that establish filtering to each network interface of a virtual server instance (VSI), based on IP address. When you create a new security group resource, you will update it to create the network traffic patterns you desire.
 

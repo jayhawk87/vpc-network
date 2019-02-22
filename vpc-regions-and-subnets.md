@@ -3,7 +3,7 @@
 copyright:
   years: 2018, 2019
   
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-02-12"
 {:download: .download}
 
 # Working with IP address ranges, address prefixes, regions, and subnets 
+{: #working-with-ip-address-ranges-address-prefixes-regions-and-subnets}
 
 This document gives an overview of the available (or restricted) IP address ranges and user actions pertaining to regions and subnets, and to address prefixes. Certain IP address ranges are unavailable because they may be in use by IBM Cloud.  
 

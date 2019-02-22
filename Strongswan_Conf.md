@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,13 +17,14 @@ lastupdated: "2019-01-23"
 
 
 # Creating a secure connection with a remote StrongSwan peer
+{: #creating-a-secure-connection-with-a-remote-strongswan-peer}
 
 This document is based on Strongswan, version Linux StrongSwan U5.3.5/K4.4.0-133-generic.
 
 The example steps that follow skip the prerequisite steps of using {{site.data.keyword.cloud}} API or CLI to create Virtual Private Clouds. For more information, see [Getting Started](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) and [VPC setup with APIs](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
 
 ## Example steps
-The topology for connecting to the remote StrongSwan peer is similar to [creating a VPN connection between two VPCs](using-vpn.html#vpn-demo-examples). However, one side of the connection is replaced by the StrongSwan unit.
+The topology for connecting to the remote StrongSwan peer is similar to creating a VPN connection between two VPCs. However, one side of the connection is replaced by the StrongSwan unit.
 
 ![enter image description here](./images/vpc-vpn-sw-figure.png)
 

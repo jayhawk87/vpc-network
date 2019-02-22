@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2019-01-23"
 
 
 # Creating a secure connection with a remote Vyatta peer
+{: #creating-a-secure-connection-with-a-remote-vyatta-peer}
 
 This document is based on Vyatta version: AT&T vRouter 5600 1801d.
 

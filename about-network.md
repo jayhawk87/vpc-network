@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-12"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -18,6 +18,7 @@ lastupdated: "2019-02-12"
 {:download: .download}
 
 # About Networking for VPC
+{: #about-networking-for-vpc}
 
 A Virtual Private Cloud (VPC) is a virtual network that's tied to your customer account. It gives you cloud security, with the ability to scale dynamically, by providing fine-grained control over your virtual infrastructure and your network traffic segmentation.
 

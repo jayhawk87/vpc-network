@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-10-31"
+  years: 2017, 2018, 2019
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-10-31"
 
 
 # Choosing IP Ranges for your VPC
+{: #choosing-ip-ranges-for-your-vpc}
 
 Use CIDR notation such as:
 

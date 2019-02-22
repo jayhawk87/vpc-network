@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -16,8 +16,9 @@ lastupdated: "2019-01-24"
 {:download: .download}
 
 # Setting up connectivity between web servers in your VPC
+{: #setting-up-conectivity-between-wb-servers-in-your-vpc}
 
-This document takes you through some example steps for setting up communcation between two web servers in your {{site.data.keyword.cloud}} VPC, using Python. It shows you how to create communicating servers in the same zone and in different zones.
+This document takes you through some example steps for setting up communication between two web servers in your {{site.data.keyword.cloud}} VPC, using Python. It shows you how to create communicating servers in the same zone and in different zones.
 
 ## Prerequisites
 

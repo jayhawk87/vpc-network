@@ -1,9 +1,9 @@
 ---
 
 copyright:
-  years: 2018
+  years: 2018, 2019
 
-lastupdated: "2018-12-12"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,6 +17,7 @@ lastupdated: "2018-12-12"
 
 
 # Comparison of commands for the API and CLI
+{: #comparison-of-commands-for-the-api-and-ci}
 
 This set of tables offers a way to compare similar commands that can be called through the REST API or through the IBM Cloud CLI.
 

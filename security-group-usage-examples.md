@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -15,6 +15,7 @@ lastupdated: "2019-01-24"
 {:download: .download}
 
 # Setting up security groups using the APIs
+{: #setting-up-security-groups-using-the-apis}
 
 The following example demonstrates how to create and manage security groups, using the {{site.data.keyword.cloud}} Regional APIs (RIAS).
 

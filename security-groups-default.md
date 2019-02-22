@@ -3,7 +3,7 @@
 copyright:
   years: 2018, 2019
 
-lastupdated: "2019-02-06"
+lastupdated: "2019-02-20"
 
 ---
 
@@ -18,6 +18,7 @@ lastupdated: "2019-02-06"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Updating the default security group
+{: #updating-the-default-security-group}
 
 
 The default security group is very similar to any other security group, with the exception that it cannot be deleted.

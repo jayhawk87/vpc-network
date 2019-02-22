@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-11"
+lastupdated: "2019-02-20"
 
 
 ---
@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:download: .download}
 
 # VPC Behind the Curtain
+{: #vpc-behind-the-curtain}
 
 This page presents a more detailed conceptual picture of what's happening "behind the curtain" with respect to VPC networking. Readers are expected to have some networking background.
 
@@ -63,5 +64,6 @@ Six different types of VSI data packet flows occur in a VPC. In ascending order 
 After NAT translation, the implicit router forwards these Internet-destined packets to the Internet, using the cloud backbone.
 
 ## Classic access
+{: #classic-access}
 
 The [**Classic access**](/docs/infrastructure/vpc/classic-access.html) feature for VPC is accomplished by re-using the VRF identifier from the {{site.data.keyword.cloud}} Classic Infrastructure Account as the VRF identifier for VPC. This implementation allows the VPC's implicit router function to join the same MPLS VPN that is used by the Classic Infrastructure Account. Thus, the VPC has access to classic resources and to anything else that's reachable by means of existing Direct Link connections.
