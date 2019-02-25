@@ -17,7 +17,7 @@ lastupdated: "2019-02-20"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Setting up Network ACLs using the CLI
-{ #setting-up-network-acls-using-the-cli}
+{: #setting-up-network-acls-using-the-cli}
 
 By using the Access Control List (ACL) functionality available in {{site.data.keyword.cloud}} Virtual Private Cloud, you can control all incoming and outgoing traffic related to your critical business workloads on the cloud. Similar to the security group, an ACL is a built-in, virtual firewall. In contrast to security groups, ACL rules control traffic to and from the subnets, rather than to and from the instances.
 
