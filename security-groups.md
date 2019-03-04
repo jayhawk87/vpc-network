@@ -3,7 +3,11 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: security groups, traffic, firewall, stateful, filtering
+
+subcollection: vpc-network
 
 ---
 
@@ -21,6 +25,8 @@ lastupdated: "2019-02-20"
 {: #using-security-groups}
 
 Security groups give you a convenient way to apply rules that establish filtering to each network interface of a virtual server instance (VSI), based on IP address. When you create a new security group resource, you will update it to create the network traffic patterns you desire.
+
+For a comparison of the characteristics of security groups and ACLs, see the [comparison table](/docs/infrastructure/vpc-network?topic=vpc-network-compare-security-groups-and-access-control-lists).
 
 By default, a security group denies all traffic. As rules are added to a security group, it defines the traffic that the security group permits.
 

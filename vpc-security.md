@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: security, ACLs, security groups, traffic, subnet, instance, VSI, firewall, encryption
+
+subcollection: vpc-network
 
 ---
 

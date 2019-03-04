@@ -3,7 +3,11 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: ACLs, network, CLI, example, tutorial, firewall, subnet, inbound, outbound, rule
+
+subcollection: vpc-network
 
 ---
 
@@ -21,15 +25,7 @@ lastupdated: "2019-02-20"
 
 By using the Access Control List (ACL) functionality available in {{site.data.keyword.cloud}} Virtual Private Cloud, you can control all incoming and outgoing traffic related to your critical business workloads on the cloud. Similar to the security group, an ACL is a built-in, virtual firewall. In contrast to security groups, ACL rules control traffic to and from the subnets, rather than to and from the instances.
 
-The following table summarizes some key differences between security groups and ACLs:
-
-|  | Security Groups | ACLs    |
-|-------------|-----------------|---------|
-| Control level  | VSI instance    | Subnet  |
-| State   | Stateful - Return traffic is allowed by default | Stateless - Return traffic is denied by default and needs to be explicitly allowed |
-| Supported rules | Uses allow rules only | Uses allow and deny rules|
-| How rules are applied | All rules are considered | Rules are processed in sequence |
-| Relationship to the associated resource | An instance can be associated with multiple security groups| Multiple subnets can be associated with the same ACL|
+For a comparison of the characteristics of security groups and ACLs, see the [comparison table](/docs/infrastructure/vpc-network?topic=vpc-network-compare-security-groups-and-access-control-lists).
 
 The example given in this document shows how to create network ACLs in your VPC, which will protect your subnets.
 

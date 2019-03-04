@@ -4,7 +4,11 @@ copyright:
 
   years: 2019
 
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: API, reference, onboard
+
+subcollection: vpc-network
 
 ---
 
@@ -18,8 +22,8 @@ lastupdated: "2019-02-20"
 # API Reference for VPC
 {: #api-reference-for-vpc}
 
-Access to {{site.data.keyword.cloud}} Virtual Private Cloud APIs require accounts to be onboarded first. 
+Your account must be approved before you'll have access to the {{site.data.keyword.cloud}} Virtual Private Cloud API Reference. 
 
-If the following link does not open the API Reference, switch to an account that has been onboarded. The link will open in a new tab or window.
+If the following link does not open the API Reference, switch to an account that has been onboarded. The link opens in a new tab or window.
 
 * [API Reference](https://{DomainName}/apidocs/rias){: new_window}

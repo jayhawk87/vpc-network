@@ -2,7 +2,11 @@
 
 copyright:
   years: 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: capabilities, use cases, subnets, VPN, connections, reserved, IP, IPv4, floating
+
+subcollection: vpc-network
 
 ---
 

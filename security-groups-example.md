@@ -3,7 +3,11 @@
 copyright:
   years: 2019
 
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: security group, VSI, ping, TCP, outbound, SG4, rules, metadata, setting up
+
+subcollection: vpc-network
 
 ---
 

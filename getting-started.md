@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-19"
+lastupdated: "2019-03-01"
+
+keywords: provisioning, resources, permissions
+
+subcollection: vpc-network
 
 ---
 

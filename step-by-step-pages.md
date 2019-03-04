@@ -4,7 +4,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-24"
+lastupdated: "2019-03-01"
+
+keywords: examples, guides, customizing, tutorials
+
+subcollection: vpc-network
 
 
 ---

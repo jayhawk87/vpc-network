@@ -10,6 +10,7 @@ Networking for Virtual Private Cloud (VPC)
     vpc-networking-concepts.md
     vpc-security.md
     vpc-regions-and-subnets.md
+    compare-sg-acl.md
     {: .navgroup-end}
 
     {: .navgroup id="howto"}
@@ -25,6 +26,7 @@ Networking for Virtual Private Cloud (VPC)
     using-acls.md
     using-vpn.md
     using-lbaas.md
+    classic-peering-overview.md
 
     {: .topicgroup}
     (Beta) Peering securely to an appliance

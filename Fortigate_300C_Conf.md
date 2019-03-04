@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-01-23"
+lastupdated: "2019-03-01"
+
+keywords: peering, FortiGate, connection, secure
+
+subcollection: vpc-network
 
 ---
 
@@ -17,6 +21,7 @@ lastupdated: "2019-01-23"
 
 
 # Creating a secure connection with a remote FortiGate peer
+{: #creating-a-secure-connection-with-a-remote-fortigate-peer}
 
 This document is based on FortiGate 300C, Firmware Version	v5.2.13, build762 (GA).
 

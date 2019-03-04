@@ -4,7 +4,11 @@
 
 copyright:
   years: 2017,2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: VPN, network, Beta, encryption, authentication, algorithm, IKE, IPsec, policies, gateway, auto-negotiation
+
+subcollection: vpc-network
 
 
 ---

@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: VRF, router, hypervisor, address prefixes, classic access, implicit router, packet flows, NAT, data flows
+
+subcollection: vpc-network
 
 
 ---

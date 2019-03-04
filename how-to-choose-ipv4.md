@@ -2,7 +2,11 @@
 
 copyright:
   years: 2017, 2018, 2019
-lastupdated: "2019-02-20"
+lastupdated: "2019-03-01"
+
+keywords: IPv4, ranges, subnets, CIDR, 1918
+
+subcollection: vpc-network
 
 ---
 
