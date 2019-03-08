@@ -32,7 +32,7 @@ By default, a security group denies all traffic. As rules are added to a securit
 
 Rules are _stateful_, which means that reverse traffic in response to allowed traffic is automatically permitted. So for example, a rule allowing inbound TCP traffic on port 80 also allows replying outbound TCP traffic on port 80 back to the originating host, without the need for an additional rule.
 
-Security groups are scoped to a single VPC. This scoping implies that security group can be attached _only_ to network interfaces of VSIs within the same VPC.
+Security groups are scoped to a single VPC. This scoping implies that a security group can be attached _only_ to network interfaces of VSIs within the same VPC.
 
 When a VSI is created without any security groups specified, the VSI's primary network interface is put into the _default_ security group of that VSI's VPC. This {{site.data.keyword.cloud}} VPC release has defined a default security group that does allow certain traffic. For more information, see [Updating the default security group](/docs/infrastructure/vpc-network?topic=vpc-network-updating-the-default-security-group).
 
