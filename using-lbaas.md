@@ -130,7 +130,7 @@ If the required authorization is removed, errors may occur for your load balance
 
 ## Identity and access management (IAM)
 
-You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, visit [Managing access to resources ![External link icon](../icons/launch-glyph.svg "External link icon")](docs/services/iam?topic=iam-iammanidaccser#resourceaccess){: new_window} for more information on Identity and access management.
+You can configure access policies for a **Load Balancer for VPC** instance. To manage your user access policies, visit [Managing access to resources ![External link icon](../icons/launch-glyph.svg "External link icon")](/docs/services/iam?topic=iam-iammanidaccser#resourceaccess){: new_window} for more information on Identity and access management.
 
 ### Configuring resource group access policies for users
 

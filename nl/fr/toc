@@ -1,0 +1,47 @@
+{:navgroup: .navgroup}
+{:topicgroup: .topicgroup}
+
+{: .toc subcollection="vpc-network" audience="service" arm="4135753" href="/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud" path="infrastructure/vpc-network"}
+Mise en réseau pour le cloud privé virtuel (VPC)
+
+    {: .navgroup id="learn"}
+    getting-started.md
+    about-network.md
+    vpc-networking-concepts.md
+    vpc-security.md
+    vpc-regions-and-subnets.md
+    {: .navgroup-end}
+
+    {: .navgroup id="howto"}
+    how-to-choose-ipv4.md
+
+    {: .topicgroup}
+    Groupes de sécurité
+        security-groups.md
+        security-groups-default.md
+        security-groups-example.md
+        security-group-usage-examples.md
+        
+    using-acls.md
+    using-vpn.md
+    using-lbaas.md
+
+    {: .topicgroup}
+    (Bêta) Appairage en toute sécurité à un appareil
+        Vyatta_Conf.md
+        Strongswan_Conf.md
+        Fortigate_300C_Conf.md
+        vSRX_conf.md
+        vpc-vpn-asav-conf.md
+    {: .navgroup-end}
+
+    {: .navgroup id="reference"}
+    api-doc-wrapper.md
+    [Référence de l'interface de ligne de commande pour un VPC](/infrastructure-service-cli-plugin/infrastructure-service-cli-vpc-reference#vpc-reference)
+    step-by-step-pages.md
+    {: .navgroup-end}
+
+    {: .navgroup id="help"}
+    /vpc/vpc-getting-help-and-support
+    {: .navgroup-end}
+
