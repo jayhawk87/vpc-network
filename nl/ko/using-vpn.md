@@ -3,8 +3,8 @@
 
 
 copyright:
-  years: 2017,2018
-lastupdated: "2018-12-12"
+  years: 2017,2018, 2019
+lastupdated: "2019-02-20"
 
 
 ---
@@ -20,8 +20,9 @@ lastupdated: "2018-12-12"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # (베타) VPC와 함께 VPN 사용
+{: #--beta-using-vpn-with-your-vpc}
 
-IBM Cloud VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 연결할 수 있습니다. VPN을 사용하여 VPC 및 온프레미스 사설 네트워크 또는 또 다른 VPC 간의 IPsec 사이트 대 사이트 터널을 설정할 수 있습니다.
+{{site.data.keyword.cloud}} VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 연결할 수 있습니다. VPN을 사용하여 VPC 및 온프레미스 사설 네트워크 또는 또 다른 VPC 간의 IPsec 사이트 대 사이트 터널을 설정할 수 있습니다.
 
 현재 {{site.data.keyword.cloud}} VPC 릴리스에 대해서는 정책 기반의 라우팅만 지원됩니다.
 
@@ -48,7 +49,7 @@ IBM Cloud VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 
 
 ### VPN 게이트웨이 및 VPN 연결
 
-|설명 | API |
+|설명| API |
 |----------------------------|-------------|
 | VPN 게이트웨이 작성 | POST /vpn_gateways |
 | VPN 게이트웨이 검색 | GET /vpn_gateways |
@@ -71,7 +72,7 @@ IBM Cloud VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 
 
 ### IKE 정책
 
-|설명 | API |
+|설명| API |
 |-----------------------------|--------------|
 | 모든 IKE 정책 검색 | GET /ike_policies |
 | IKE 정책 작성 | POST /ike_policies |
@@ -80,9 +81,9 @@ IBM Cloud VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 
 | IKE 정책 업데이트 | PATCH /ike_policies/{id} |
 | 지정된 IKE 정책을 사용하는 모든 연결 검색 | GET /ike_policies/{id}/connections |
 
-### IPSec 정책
+### IPsec 정책
 
-|설명 | API |
+|설명| API |
 |---------------------|-------------|
 | 모든 IPSec 정책 검색 | GET /ipsec_policies |
 | IPSec 정책 작성 | POST /ipsec_policies |
@@ -91,101 +92,112 @@ IBM Cloud VPC VPN 서비스를 사용하면 안전하게 사설 네트워크에 
 | IPSec 정책 업데이트 | PATCH /ipsec_policies/{id} |
 | 지정된 IPsec 정책을 사용하는 모든 연결 검색 | GET /ipsec_policies/{id}/connections |
 
-## VPN 데모 예제
+## VPN 예제
 
 다음 예제에서는 VPN을 사용하여 두 개의 VPC에 함께 연결할 수 있습니다. 즉, 두 개의 별도의 VPC 내의 서브넷이 단일 네트워크에 존재하는 것처럼 연결할 수 있습니다. 서브넷의 IP 주소가 겹치지 않아야 합니다. 시나리오는 다음과 같습니다(각 VPC에 일부 VM이 추가됨):
 ![예제 VPN 시나리오](images/vpc-vpn.png)
 
 ### 예제 단계
 
-다음 예제 단계에서는 IBM Cloud API 또는 CLI를 사용하여 VPC를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](getting-started.html) 및 [API로 VPC 설정](https://{DomainName}/docs/infrastructure/vpc/example-code.html)을 참조하십시오.
+다음 예제 단계에서는 IBM Cloud API 또는 CLI를 사용하여 VPC를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) 및 [API로 VPC 설정](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis)을 참조하십시오.
 
-필요에 따라 UI를 사용하여 VPN 게이트웨이를 작성할 수 있습니다. 단계는 [콘솔 튜토리얼 문서](https://{DomainName}/docs/infrastructure/vpc/console-tutorial.html#creating-a-vpn)를 참조하십시오.
+필요에 따라 UI를 사용하여 VPN 게이트웨이를 작성할 수 있습니다. 단계는 [콘솔 튜토리얼 문서](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-ibm-cloud-console#creating-a-vpn)를 참조하십시오.
 
-**1단계. VPC 서브넷에서 VPN 게이트웨이를 작성하십시오.**
+#### 1단계: VPC 서브넷에서 VPN 게이트웨이 작성
 
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways \
+curl -H "Authorization: $iam_token" -X POST $rias_endpoint/v1/vpn_gateways?version=2019-01-01 \
     -d '{
             "name": "vpn-gateway-1",
-            "subnet": {"id": "<SUBNET-ID-1>"}
+            "subnet": {"id": $subnet1}
         }'
 ```
 {: codeblock}
 
 샘플 출력:
-```bash
+```
 {
-    "created_at": "2018-07-06T19:19:28.694388Z",
-    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a",
     "id": "7fd72524-6e2d-49a6-b975-0071efccd89a",
+    "crn": "crn:v1:bluemix:public:is:us-south:a/b668aa2600ac21c890aef16a6210b2fd::vpn:7fd72524-6e2d-49a6-b975-0071efccd89a",
     "name": "vpn-gateway-1",
+    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a",
+    "created_at": "2018-07-06T19:19:28.694388Z",
+    "status": "pending",
     "public_ip": {
         "address": "169.61.161.167"
     },
-    "status": "pending",
     "subnet": {
-        "href": "https://us-south.iaas.cloud.ibm.com/v1/subnets/f45ee0be-cf3f-41ca-a279-23139110aa58",
         "id": "f45ee0be-cf3f-41ca-a279-23139110aa58",
-        "name": "subnet-1"
+        "name": "subnet-1",
+        "href": "https://us-south.iaas.cloud.ibm.com/v1/subnets/f45ee0be-cf3f-41ca-a279-23139110aa58"
+    },
+    "resource_group": {
+        "id": "d28a2jsiw1pl2g22q8462tyr321416z2",
+        "href": "https://resource-manager.bluemix.net/v1/resource_groups/d28a2jsiw1pl2g22q8462tyr321416z2"
     }
 }
 ```
-{: codeblock}
+{: screen}
 
 후속 단계를 위해 다음 필드를 저장하십시오.
-* `id`. VPN 게이트웨이 ID이며 `VPN-GATEWAY-1-ID`로 참조됩니다.
-* `address`. VPN 게이트웨이의 공인 IP 주소이며 `VPN-GATEWAY-1-IP`로 참조됩니다.
+* `id`. VPN 게이트웨이 ID이며 `$gwid1`로 참조됩니다.
+* `address`. VPN 게이트웨이의 공인 IP 주소이며 `$gwaddress1`로 참조됩니다.
 
 참고: 게이트웨이 상태는 VPN 게이트웨이가 작성 중인 동안 `pending`으로 표시되다가 작성이 완료되면 `available`로 변경됩니다. 작성에는 시간이 걸릴 수 있습니다. 다음 명령으로 해당 상태를 확인할 수 있습니다.
+
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X GET https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/<VPN-GATEWAY-1-ID>
+curl -H "Authorization: $iam_token" -X GET $rias_endpoint/v1/vpn_gateways/$gwid1?version=2019-01-01
 ```
 {: codeblock}
 
-**2단계. 다른 VPC에서 두 번째 VPN 게이트웨이를 작성하십시오.**
+#### 2단계: 다른 VPC에서 두 번째 VPN 게이트웨이를 작성하십시오.
 
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways \
+curl -H "Authorization: $iam_token" -X POST $rias_endpoint/v1/vpn_gateways?version=2019-01-01 \
         -d '{
                 "name": "vpn-gateway-2",
-                "subnet": {"id": "<SUBNET-ID-2>"}
+                "subnet": {"id": $subnet2}
             }'
 ```
 {: codeblock}
 
 샘플 출력:
-```bash
+```
 {
-    "created_at": "2018-07-06T19:33:23.789675Z",
-    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/f72559a3-2fac-4958-b937-54474e6a8a8d",
     "id": "f72559a3-2fac-4958-b937-54474e6a8a8d",
+    "crn": "crn:v1:bluemix:public:is:us-south:a/b668aa2600ac21c890aef16a6210b2fd::vpn:f72559a3-2fac-4958-b937-54474e6a8a8d",
     "name": "vpn-gateway-2",
+    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/f72559a3-2fac-4958-b937-54474e6a8a8d",
+    "created_at": "2018-07-06T19:33:23.789675Z",
+    "status": "pending",
     "public_ip": {
         "address": "169.61.161.150"
     },
-    "status": "pending",
     "subnet": {
-        "href": "https://us-south.iaas.cloud.ibm.com/v1/subnets/f72c7f7c-0fa5-42d1-9bdc-9e0acad53cb4",
         "id": "f72c7f7c-0fa5-42d1-9bdc-9e0acad53cb4",
-        "name": "subnet-2"
+        "name": "subnet-2",
+        "href": "https://us-south.iaas.cloud.ibm.com/v1/subnets/f72c7f7c-0fa5-42d1-9bdc-9e0acad53cb4"
+    },
+    "resource_group": {
+        "id": "d28a2jsiw1pl2g22q8462tyr321416z2",
+        "href": "https://resource-manager.bluemix.net/v1/resource_groups/d28a2jsiw1pl2g22q8462tyr321416z2"
     }
 }
 ```
-{: codeblock}
+{: screen}
 
 후속 단계를 위해 다음 필드를 저장하십시오.
-* `id`. VPN 게이트웨이 ID이며 `VPN-GATEWAY-2-ID`로 참조됩니다.
-* `address`. VPN 게이트웨이의 공인 IP 주소이며 `VPN-GATEWAY-2-IP`로 참조됩니다.
+* `id`. VPN 게이트웨이 ID이며 `$gwid2`로 참조됩니다.
+* `address`. VPN 게이트웨이의 공인 IP 주소이며 `$gwaddress2`로 참조됩니다.
 
 
-**3단계. `local_cidrs`를 VPC 1의 서브넷으로 설정하고 `peer_cidrs`를 VPC 2의 서브넷으로 설정한 상태에서 첫 번째 VPN 게이트웨이에서 두 번째 VPN 게이트웨이로 VPN 연결을 작성하십시오.**
+#### 3단계: `local_cidrs`를 VPC 1의 서브넷으로 설정하고 `peer_cidrs`를 VPC 2의 서브넷으로 설정한 상태에서 첫 번째 VPN 게이트웨이에서 두 번째 VPN 게이트웨이로 VPN 연결을 작성하십시오.
 
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/<VPN-GATEWAY-1-ID>/connections \
+curl -H "Authorization: $iam_token" -X POST $rias_endpoint/v1/vpn_gateways/$gwid1/connections?version=2019-01-01 \
         -d '{
                 "name": "vpn-connection-to-vpn-gateway-2",
-                "peer_address": "<VPN-GATEWAY-2-IP>",
+                "peer_address": $gwaddress2,
                 "psk": "VPNDemoPassword",
                 "local_cidrs": [ "<LOCAL-CIDR>" ],
                 "peer_cidrs": [ "<PEER-CIDR>" ]
@@ -193,13 +205,41 @@ curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.i
 ```
 {: codeblock}
 
-**4단계. `local_cidrs`를 VPC 2의 서브넷으로 설정하고 `peer_cidrs`를 VPC 1의 서브넷으로 설정한 상태에서 두 번째 VPN 게이트웨이에서 첫 번째 VPN 게이트웨이로 VPN 연결을 작성하십시오.**
+샘플 출력:
+```
+{
+    "id": "a252d380-0784-45ff-8fc0-c2b58e446b4d",
+    "name": "vpn-connection-to-vpn-gateway-2",
+    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a/connections/a252d380-0784-45ff-8fc0-c2b58e446b4d",
+    "local_cidrs": [
+        "192.168.100.0/24"
+            ],
+    "peer_cidrs": [
+        "192.168.0.0/24"
+            ],
+    "peer_address": "169.61.161.150",
+    "admin_state_up": true,
+    "psk": "VPNDemoPassword",
+    "dead_peer_detection": {
+        "action": "none",
+                "interval": 30,
+                "timeout": 120
+            },
+    "created_at": "2018-07-06T19:50:49.252072Z",
+    "route_mode": "policy",
+    "authentication_mode": "psk",
+    "status": "down"
+}
+```
+{: screen}
+
+#### 4단계: `local_cidrs`를 VPC 2의 서브넷으로 설정하고 `peer_cidrs`를 VPC 1의 서브넷으로 설정한 상태에서 두 번째 VPN 게이트웨이에서 첫 번째 VPN 게이트웨이로 VPN 연결을 작성하십시오.
 
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/<VPN-GATEWAY-2-ID>/connections \
+curl -H "Authorization: $iam_token" -X POST $rias_endpoint/v1/vpn_gateways/$gwid2/connections?version=2019-01-01 \
         -d '{
                 "name": "vpn-connection-to-vpn-gateway-1",
-                "peer_address": "<VPN-GATEWAY-1-IP>",
+                "peer_address": $gwaddress2,
                 "psk": "VPNDemoPassword",
                 "local_cidrs": [ "<LOCAL-CIDR>" ],
                 "peer_cidrs": [ "<PEER-CIDR>" ]
@@ -207,84 +247,110 @@ curl -H "Authorization: Bearer $iam_token" -X POST https://us-south.iaas.cloud.i
 ```
 {: codeblock}
 
-**5단계. 연결을 확인하십시오.**
+샘플 출력:
+```
+{
+    "id": "1d4dbacq-673d-2qed-hf68-858961739gf0",
+    "name": "vpn-connection-to-vpn-gateway-1",
+    "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/f72559a3-2fac-4958-b937-54474e6a8a8d/connections/1d4dbacq-673d-2qed-hf68-858961739gf0",
+    "local_cidrs": [
+        "192.168.100.0/24"
+            ],
+    "peer_cidrs": [
+        "192.168.100.0/24"
+            ],
+    "peer_address": "169.61.161.167",
+    "admin_state_up": true,
+    "psk": "VPNDemoPassword",
+    "dead_peer_detection": {
+        "action": "none",
+                "interval": 30,
+                "timeout": 120
+            },
+    "created_at": "2018-07-06T19:54:14.961597Z",
+    "route_mode": "policy",
+    "authentication_mode": "psk",
+    "status": "down"
+}
+```
+{: screen}
+
+#### 5단계: 연결 확인
+
 VPN 연결이 설정되고 나면 서브넷 1에서 서브넷 2의 인스턴스에 연결할 수 있으며 그 반대의 경우도 가능합니다.
 
 다음과 같이 VPN 연결의 상태를 확인할 수 있습니다.
 ```bash
-curl -H "Authorization: Bearer $iam_token" -X GET https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/<VPN-GATEWAY-1-ID>/connections
+curl -H "Authorization: $iam_token" -X GET $rias_endpoint/v1/vpn_gateways/$gwid1/connections?version=2019-01-01
 ```
 {: codeblock}
 
 샘플 출력:
-```bash
+```
 {
+    "first": {
+        "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a/connections?limit=10"
+    },
+    "limit": 10,
     "connections": [
         {
+            "id": "a252d380-0784-45ff-8fc0-c2b58e446b4d",
+            "name": "vpn-connection-to-vpn-gateway-2",
+            "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a/connections/a252d380-0784-45ff-8fc0-c2b58e446b4d",
+            "local_cidrs": [
+                "192.168.100.0/24"
+            ],
+            "peer_cidrs": [
+                "192.168.0.0/24"
+            ],
+            "peer_address": "169.61.161.150",
             "admin_state_up": true,
-            "authentication_mode": "psk",
-            "created_at": "2018-07-06T19:50:49.252072Z",
+            "psk": "VPNDemoPassword",
             "dead_peer_detection": {
                 "action": "none",
                 "interval": 30,
                 "timeout": 120
             },
-            "href": "https://us-south.iaas.cloud.ibm.com/v1/vpn_gateways/7fd72524-6e2d-49a6-b975-0071efccd89a/connections/a252d380-0784-45ff-8fc0-c2b58e446b4d",
-            "id": "a252d380-0784-45ff-8fc0-c2b58e446b4d",
-            "local_cidrs": [
-                "192.168.100.0/24"
-            ],
-            "name": "vpn-connection-to-vpn-gateway-2",
-            "peer_address": "169.61.161.150",
-            "peer_cidrs": [
-                "192.168.0.0/24"
-            ],
-            "psk": "VPNDemoPassword",
+            "created_at": "2018-07-06T19:50:49.252072Z",
             "route_mode": "policy",
+            "authentication_mode": "psk",
             "status": "up"
         }
     ]
 }
 ```
-{: codeblock}
+{: screen}
 
 ## 할당량
 
-현재의 계정당 리소스 제한사항은 다음과 같습니다.
-* 최대 7개의 VPN 게이트웨이
-* VPN 게이트웨이당 최대 10개의 VPN 연결
-* 지정된 VPN 게이트웨이의 VPN 연결 전체에 걸친 최대 50개의 피어 서브넷
-  * 지정된 VPN 연결에 최대 15개의 피어 서브넷
-* 지정된 VPN 게이트웨이의 VPN 연결 전체에 걸친 최대 50개의 로컬 서브넷
-  * 지정된 VPN 연결에 최대 15개의 로컬 서브넷
-* 최대 20개의 IKE 정책
-* 최대 20개의 IPSec 정책
+VPN 할당량은 [VPC 할당량](/docs/infrastructure/vpc?topic=vpc-quotas#vpn-quotas) 주제를 참조하십시오. 
 
 ## 정책 자동 협상
 
 VPN 연결을 구성하기 위해 IKE 및 IPSec 정책을 사용하는 것은 선택사항입니다. 정책을 선택하지 않으면 _자동 협상_이라 불리는 프로세스에 대한 기본 제안이 자동으로 선택됩니다. 자동 협상의 일부로 사용되는 제안은 다음과 같습니다.
 
-**참고:** IBM Cloud는 개시자로서 **IKEv2**를 사용합니다. IBM Cloud는 응답자로서 **IKEv1** 및 **IKEv2**를 둘 다 사용합니다.
+IBM Cloud는 개시자로 **IKEv2**를 사용합니다. IBM Cloud는 응답자로서 **IKEv1** 및 **IKEv2**를 둘 다 사용합니다.
+{: note}
 
-### IKE 자동 협상(1단계(Phase))
+### IKE 자동 협상(1단계)
 
 다음과 같은 암호화, 인증 및 DH 그룹 옵션을 원하는 대로 조합하여 사용할 수 있습니다.
 
-|    | 암호화 |인증 | DH 그룹 |
+|    | 암호화 |인증| DH 그룹 |
 |----|------------|----------------|----------|
-|1  | aes128 | sha1   |2  |
-|2  | aes256 | sha256 |5  |
-|3  | 3des   | md5    | 14 |
+|1| aes128 | sha1   |2|
+|2| aes256 | sha256 |5|
+|3| 3des   | md5    | 14 |
 
-### IPsec 자동 협상(2단계(Phase))
+### IPsec 자동 협상(2단계)
 
 다음과 같은 암호화 및 인증 옵션을 원하는 대로 조합하여 사용할 수 있습니다.
 
-|    | 암호화 |인증 | DH 그룹 |
+|    | 암호화 |인증| DH 그룹 |
 |----|------------|----------------|----------|
-|1  | aes128 | sha1   | 사용 불가능 |
-|2  | aes256 | sha256 | 사용 불가능 |
-|3  | 3des   | md5    | 사용 불가능 |
+|1| aes128 | sha1   | 사용 불가능 |
+|2| aes256 | sha256 | 사용 불가능 |
+|3| 3des   | md5    | 사용 불가능 |
 
 ## FAQ
 

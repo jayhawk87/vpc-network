@@ -2,7 +2,7 @@
 {:topicgroup: .topicgroup}
 
 {: .toc subcollection="vpc-network" audience="service" arm="4135753" href="/docs/infrastructure/vpc-network?topic=vpc-network-getting-started-with-networking-for-virtual-private-cloud" path="infrastructure/vpc-network"}
-가상 사설 클라우드(VPC)의 네트워킹
+Networking for Virtual Private Cloud (VPC)
 
     {: .navgroup id="learn"}
     getting-started.md
@@ -16,7 +16,7 @@
     how-to-choose-ipv4.md
 
     {: .topicgroup}
-    보안 그룹
+    Sicherheitsgruppen
         security-groups.md
         security-groups-default.md
         security-groups-example.md
@@ -27,7 +27,7 @@
     using-lbaas.md
 
     {: .topicgroup}
-    (베타) 어플라이언스에 안전하게 피어링
+    (Beta) Sichere Peerverbindung zu einer Appliance
         Vyatta_Conf.md
         Strongswan_Conf.md
         Fortigate_300C_Conf.md
@@ -37,7 +37,7 @@
 
     {: .navgroup id="reference"}
     api-doc-wrapper.md
-    [VPC용 CLI 참조](/infrastructure-service-cli-plugin/infrastructure-service-cli-vpc-reference#vpc-reference)
+    [Referenzinformationen zur Befehlszeilenschnittstelle (CLI) für VPC](/infrastructure-service-cli-plugin/infrastructure-service-cli-vpc-reference#vpc-reference)
     step-by-step-pages.md
     {: .navgroup-end}
 

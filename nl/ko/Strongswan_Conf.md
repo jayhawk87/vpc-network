@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-12"
+  years: 2017, 2018, 2019
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,11 +17,14 @@ lastupdated: "2018-11-12"
 
 
 # 원격 StrongSwan 피어와의 보안 연결 작성
+{: #creating-a-secure-connection-with-a-remote-strongswan-peer}
 
 이 문서는 Strongswan, 버전 Linux StrongSwan U5.3.5/K4.4.0-133-generic을 기반으로 합니다.
 
+다음 예제 단계에서는 {{site.data.keyword.cloud}} API 또는 CLI를 사용하여 가상 사설 클라우드(VPC)를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) 및 [API로 VPC 설정](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis)을 참조하십시오.
+
 ## 예제 단계
-원격 StrongSwan 피어에 대한 연결의 토폴로지는 [두 VPC 사이에 VPN 연결을 작성](using-vpn.html#vpn-demo-examples)하는 것과 유사합니다. 단, 연결의 한 측이 StrongSwan 장치로 대체됩니다.
+원격 StrongSwan 피어에 대한 연결의 토폴로지는 두 VPC 사이에 VPN 연결을 작성하는 것과 유사합니다. 단, 연결의 한 측이 StrongSwan 장치로 대체됩니다.
 
 ![여기에 이미지 설명 입력](./images/vpc-vpn-sw-figure.png)
 
@@ -37,7 +40,8 @@ VPN 피어가 원격 VPN 피어로부터 연결 요청을 수신하면 IPsec 1�
 
 * StrongSwan이 원격 피어를 인증하고 보안 연결을 설정하는 데 필요한 1단계(Phase) 매개변수를 정의하십시오.
 
-* StrongSwan이 원격 피어를 사용하여 VPN 터널을 작성하는 데 필요한 2단계(Phase) 매개변수를 정의하십시오. IBM Cloud VPC의 VPN 기능에 연결하기 위해 권장되는 구성은 다음과 같습니다.
+* StrongSwan이 원격 피어를 사용하여 VPN 터널을 작성하는 데 필요한 2단계(Phase) 매개변수를 정의하십시오.
+IBM Cloud VPC의 VPN 기능에 연결하기 위해 권장되는 구성은 다음과 같습니다.
 
 1. 인증에서 `IKEv2` 선택
 2. 1단계(Phase) 제안에서 `DH-group 2`를 사용하도록 설정
@@ -101,5 +105,3 @@ vim ipsec.secrets
 IBM Cloud 콘솔을 통해 연결 상태를 확인할 수 있습니다. 또한 VSI를 사용하여 사이트에서 사이트로 `ping`을 시도할 수 있습니다.
 
 ![vpc-vpn-sw-status.png](./images/vpc-vpn-sw-status.png)
-
-이 문서의 예제 단계에서는 IBM Cloud API 또는 CLI를 사용하여 VPC를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](../vpc/getting-started.html) 및 [API로 VPC 설정](../vpc/example-code.html)을 참조하십시오.

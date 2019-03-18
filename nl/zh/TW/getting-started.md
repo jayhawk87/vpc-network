@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 開始使用虛擬專用雲端的網路
+{: #getting-started-with-networking-for-virtual-private-cloud}
 
 
 IBM 將接受限量客戶參與 2019 年 4 月初開辦的 VPC「搶先體驗」計劃，並在接下來幾個月開放擴大使用。如果您的組織希望體驗「IBM 虛擬專用雲端」，請填寫此[申請表](https://cloud.ibm.com/vpc){: new_window}，IBM 業務代表將聯絡您進行下一步。

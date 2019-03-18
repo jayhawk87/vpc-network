@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # 虚拟私有云联网入门
+{: #getting-started-with-networking-for-virtual-private-cloud}
 
 
 从 2019 年 4 月初开始，IBM 将接受有限数量的客户参与“VPC 早期访问计划”，并在接下来的几个月内开放更大的使用量。如果您的组织希望获取 IBM 虚拟私有云的访问权，请填写此[报名表](https://cloud.ibm.com/vpc){: new_window}，IBM 代表将与您联系，就后续步骤进行沟通。

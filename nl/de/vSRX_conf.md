@@ -18,51 +18,51 @@ lastupdated: "2019-02-20"
 {:DomainName: data-hd-keyref="DomainName"} 
 
 
-# 원격 Juniper vSRX 피어와의 보안 연결 작성
+# Sichere Verbindung mit einem fernen Juniper vSRX-Peer erstellen
 {: #creating-a-secure-connection-with-a-remote-juniper-vsrx-peer}
 
-이 문서는 Juniper vSRX, JUNOS Software 릴리스 [15.1X49-D123.3]을 기반으로 합니다.
+Dieses Dokument basiert auf Juniper vSRX, JUNOS Software Release [15.1X49-D123.3].
 
-다음 예제 단계에서는 {{site.data.keyword.cloud}} API 또는 CLI를 사용하여 가상 사설 클라우드(VPC)를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) 및 [API로 VPC 설정](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis)을 참조하십시오.
+Bei den nachfolgenden Beispielschritten werden die vorausgesetzten Schritte zum Erstellen von VPCs unter Verwendung der {{site.data.keyword.cloud}}-API oder -CLI übersprungen. Weitere Informationen finden Sie in der [Einführung](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) und in [VPC-Einrichtung mit APIs](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis).
 
-## 예제 단계
-원격 Juniper vSRX 피어에 대한 연결의 토폴로지는 [두 VPC 사이에 VPN 연결을 작성](/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-vpn-with-your-vpc)하는 것과 유사합니다. 단, 연결의 한 측이 Juniper vSRX 장치로 대체됩니다.
+## Beispielschritte
+Die Topologie für die Verbindungsherstellung zum fernen Juniper vSRX-Peer hat Ähnlichkeit mit der [Erstellung einer VPN-Verbindung zwischen zwei VPCs](/docs/infrastructure/vpc-network?topic=vpc-network--beta-using-vpn-with-your-vpc). Eine Seite der Verbindung wird jedoch durch die Juniper vSRX-Einheit ersetzt.
 
-![여기에 이미지 설명 입력](./images/vpc-vpn-vsrx-figure.png)
+![Abbildungsbeschreibung](./images/vpc-vpn-vsrx-figure.png)
 
-### 원격 Juniper vSRX 피어와의 보안 연결 작성 방법
+### Vorgehensweise zum Erstellen einer sicheren Verbindung mit einen fernen Juniper vSRX-Peer
 
-VPN 피어가 원격 VPN 피어로부터 연결 요청을 수신하면 IPsec 1단계(Phase) 매개변수를 사용하여 보안 연결을 설정하고 해당 VPN 피어를 인증합니다. 그런 다음, 보안 정책이 연결을 허용하면 Juniper vSRX 장치가 IPsec 2단계(Phase) 매개변수를 사용하여 터널을 설정하고 IPsec 보안 정책을 적용합니다. 키 관리, 인증 및 보안 서비스가 IKE 프로토콜을 통해 동적으로 협상됩니다.
+Wenn ein VPN-Peer eine Verbindungsanforderung von einem fernen VPN-Peer empfängt, verwendet sie IPsec-Parameter für Phase 1, um eine sichere Verbindung herzustellen und diesen VPN-Peer zu authentifizieren. Wenn die Sicherheitsrichtlinie die Verbindung zulässt, richtet die Juniper vSRX-Einheit dann unter Verwendung der IPsec-Parameter für Phase 2 den Tunnel ein und wendet die IPsec-Sicherheitsrichtlinie an. Schlüsselmanagement, Authentifizierung und Sicherheitsservices werden dynamisch über das IKE-Protokoll verhandelt.
 
-**해당 기능을 지원하려면 Juniper vSRX 장치에 의해 다음과 같은 일반 구성 단계가 수행되어야 합니다.**
+**Damit diese Funktionen unterstützt werden, müssen die folgenden allgemeinen Konfigurationsschritte von der Juniper vSRX-Einheit ausgeführt werden:**
 
-* Juniper vSRX가 원격 피어를 인증하고 보안 연결을 설정하는 데 필요한 1단계(Phase) 매개변수를 정의하십시오.
+* Definieren der Parameter für Phase 1, die die Juniper vSRX-Einheit benötigt, um den fernen Peer zu authentifizieren und eine sichere Verbindung herzustellen.
 
-* Juniper vSRX가 원격 피어를 사용하여 VPN 터널을 작성하는 데 필요한 2단계(Phase) 매개변수를 정의하십시오.
-IBM Cloud VPC의 VPN 기능에 연결하기 위해 권장되는 구성은 다음과 같습니다.
+* Definieren der Parameter von Phase 2, die die Juniper vSRX-Einheit benötigt, um einen VPN-Tunnel mit dem fernen Peer zu erstellen.
+Um eine Verbindung mit der VPN-Funktionalität von IBM Cloud VPC herzustellen, wird die folgende Konfiguration empfohlen:
 
-1. 1단계(Phase)에서 `IKEv1` 선택
-2. 라우트 모드가 아니라 정책 모드 설정
-3. 1단계(Phase) 제안에서 `DH-group 2`를 사용하도록 설정
-4. 1단계(Phase) 제안에서 `lifetime = 36000`을 설정
-5. 2단계(Phase) 제안에서 PFS를 사용하도록 설정
-6. 2단계(Phase) 제안에서 `lifetime = 10800` 설정
-7. 피어 및 서브넷의 정보를 2단계(Phase) 제안에 입력
-8. 외부 인터페이스에서 UDP 500 트래픽 허용
+1. Wählen Sie in Phase 1 den Wert `IKEv1` aus.
+2. Richten Sie den Richtlinienmodus ein, nicht den Weiterleitungsmodus.
+3. Aktivieren Sie im Vorschlag für Phase 1 den Eintrag `DH-group 2`.
+4. Legen Sie im Vorschlag für Phase 1 den Wert `lifetime = 36000` fest.
+5. Aktivieren Sie im Vorschlag für Phase 2 den Wert 'PFS'.
+6. Legen Sie im Vorschlag für Phase 2 den Wert `lifetime = 10800` fest.
+7. Geben Sie beim Vorschlag für Phase 2 die Informationen für Ihren Peer und Ihr Teilnetz ein.
+8. Lassen Sie UDP 500-Datenverkehr auf der externen Schnittstelle zu.
 
-#### 알려진 제한사항
+#### Bekannte Einschränkungen
 
-* Juniper vSRX는 _라우트 모드_에서만 IKEv2를 지원합니다. 따라서 IKEv2를 정책 모드로 설정하면 `IKEv2 requires bind-interface configuration as only route-based is supported` 오류가 표시됩니다. 그러나 IBM Cloud VPC VPNaaS는 현재 _정책 모드_만 지원합니다. 따라서 Juniper vSRX를 사용하려면 1단계(Phase)에서 IKEv1을 설정해야 합니다.
+* Juniper vSRX unterstützt IKEv2 ausschließlich im _Richtlinienmodus_. Wenn Sie IKEv2 im Richtlinienmodus konfigurieren, wird daher der Fehler `IKEv2 requires bind-interface configuration as only route-based is supported` gemeldet. IBM Cloud VPC VPNaaS hingegen unterstützt derzeit nur den _Richtlinienmodus_. Daher müssen Sie IKEv1 in Phase 1 so konfigurieren, dass Juniper vSRX verwendet wird.
 
-* 기본적으로 IBM Cloud VPC VPNaaS는 2단계(Phase)에서 PFS를 사용 안함으로 설정하며 vSRX에서는 2단계(Phase)에서 PFS가 _사용됨_으로 설정되어야 합니다. 이런 이유로 VPC VPNaaS 측에서 기본 정책을 대체할 새 IPsec 정책을 작성해야 합니다.
+* Standardmäßig inaktiviert IBM Cloud VPC VPNaaS die PFS in Phase 2, wohingegen vSRX erfordert, dass PFS in Phase 2 _aktiviert_ ist. Aus diesem Grund müssen Sie eine neue IPsec-Richtlinie erstellen, die die Standardrichtlinie auf der VPC-VPNaaS-Seite ersetzt.
 
-### Juniper vSRX에 로그인하여 SSH를 사용하여 구성
+### Mit SSH bei Juniper vSRX anmelden, um die Konfiguration vorzunehmen
 
-#### 다음은 보안을 설정하는 예제입니다.
+#### Das folgende Beispiel zeigt, wie Sie die Sicherheit einrichten:
 
 ```
 
-admin@Juniper-vSRX# show security
+admin@Juniper-vSRX# show security    
 
 log {
     mode stream;
@@ -146,7 +146,7 @@ screen {
         }
         ip {
             source-route-option;
-            tear-drop;
+            tear-drop;                  
         }
         tcp {
             syn-flood {
@@ -154,7 +154,7 @@ screen {
                 attack-threshold 200;
                 source-threshold 1024;
                 destination-threshold 2048;
-                queue-size 2000; ## Warning: 'queue-size' is deprecated
+                queue-size 2000; ## Warnung: 'queue-size' wird nicht weiter unterstützt
                 timeout 20;
             }
             land;
@@ -187,7 +187,7 @@ policies {
         }
         policy Allow_Management {
             match {
-                source-address any;
+                source-address any;     
                 destination-address SL_PUB_MGMT;
                 application [ junos-ssh junos-https junos-http junos-icmp-ping ];
             }
@@ -228,7 +228,7 @@ policies {
             }
         }
     }
-}
+}                                       
 zones {
     security-zone SL-PRIVATE {
         interfaces {
@@ -266,7 +266,7 @@ zones {
 
 ```
 
-#### 다음은 방화벽을 설정하는 예제입니다.
+#### Das folgende Beispiel zeigt, wie Sie die Firewall einrichten:
 
 ```
 admin@Juniper-vSRX# show firewall filter PROTECT-IN term VPN_IKE
@@ -283,28 +283,28 @@ then accept;
 [edit]
 ```
 
-구성 파일 실행이 완료되면 다음 명령을 사용하여 CLI에서 연결 상태를 확인할 수 있습니다.
+Nachdem die Ausführung der Konfigurationsdatei abgeschlossen ist, sollten Sie den Verbindungsstatus über die Befehlszeilenschnittstelle (CLI) prüfen. Verwenden Sie dazu den folgenden Befehl:
 
 ```
  run show security ipsec security-associations
 ```
-### 로컬 IBM Cloud VPC와의 보안 연결 작성
+### Vorgehensweise zum Erstellen einer sicheren Verbindung mit der lokalen IBM Cloud-VPC
 
-보안 연결을 작성하기 위해 VPC 내에서 VPN 연결을 작성할 것이며 이는 2 VPC 예제와 유사합니다.
+Zum Erstellen einer sicheren Verbindung erstellen Sie die VPN-Verbindung innerhalb Ihrer VPC, was dem Beispiel mit den 2 VPCs ähnelt.
 
-**2단계(Phase)에서 PFS를 사용으로 설정해야 합니다. 따라서 연결을 작성하기 전에 새 IPsec 정책을 작성해야 합니다.**
+**Vergessen Sie nicht, dass Sie in Phase 2 PFS aktivieren müssen. Daher müssen Sie eine neue IPsec-Richtlinie erstellen, bevor Sie eine Verbindung erstellen.**
 
 ![vpc-vpn-vsrx-ipsec](./images/vpc-vpn-vsrx-ipsec.png)
 
-`local_cidrs`를 VPC의 서브넷 값으로 설정하고 `peer_cidrs`를 Juniper vSRX의 서브넷 값으로 설정한 상태로 VPC 및 Juniper vSRX 사이의 VPN 연결과 함께 VPC 서브넷에 VPN 게이트웨이를 작성하십시오.
+Erstellen Sie ein VPN-Gateway auf Ihrem VPC-Teilnetz sowie eine VPN-Verbindung zwischen der VPC und der Juniper vSRX-Einheit. Legen Sie dabei für `local_cidrs` den Wert für das Teilnetz auf der VPC und für `peer_cidrs` den Wert für das Teilnetz auf der Juniper vSRX-Einheit fest.
 
-게이트웨이 상태는 VPN 게이트웨이가 작성 중인 동안 `pending`으로 표시되다가 작성이 완료되면 `available`로 변경됩니다. 작성에는 시간이 걸릴 수 있습니다.
+Für das Gateway wird der Status 'Anstehend' (`pending`) angezeigt, solange das VPN-Gateway erstellt wird. Der Status wechselt zu 'Verfügbar' (`available`), sobald der Erstellungsvorgang abgeschlossen ist. Die Erstellung kann einige Zeit in Anspruch nehmen.
 {:note}
 
 ![vpc-vpn-vsrx-connection](./images/vpc-vpn-vsrx-connection.png)
 
-### 보안 연결의 상태 확인
+### Status einer sicheren Verbindung prüfen
 
-IBM Cloud 콘솔을 통해 연결 상태를 확인할 수 있습니다. 또한 VSI를 사용하여 사이트에서 사이트로 `ping`을 시도할 수 있습니다.
+Sie können den Status Ihrer Verbindung über die IBM Cloud-Konsole prüfen. Außerdem könnten Sie auch versuchen, von Site zu Site ein `Pingsignal` mit den VSIs abzusetzen.
 
 ![vpc-vpn-vsrx-status.png](./images/vpc-vpn-vsrx-status.png)

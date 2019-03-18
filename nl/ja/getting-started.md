@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Virtual Private Cloud でのネットワーキングの概要
+{: #getting-started-with-networking-for-virtual-private-cloud}
 
 
 IBM は、2019 年 4 月上旬に開始する VPC の早期アクセス・プログラムについて、限定数のお客様の参加を受け付けます。その数カ月後に、利用者数を増やす予定です。IBM Virtual Private Cloud へのアクセスを希望するお客様は、この[応募フォーム](https://cloud.ibm.com/vpc){: new_window}にご記入ください。IBM 担当員から次のステップについてお知らせいたします。

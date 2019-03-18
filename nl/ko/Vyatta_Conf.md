@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017, 2018
-lastupdated: "2018-11-12"
+  years: 2017, 2018, 2019
+lastupdated: "2019-02-20"
 
 ---
 
@@ -17,11 +17,14 @@ lastupdated: "2018-11-12"
 
 
 # 원격 Vyatta 피어와의 보안 연결 작성
+{: #creating-a-secure-connection-with-a-remote-vyatta-peer}
 
 이 문서는 Vyatta 버전: AT&T vRouter 5600 1801d를 기반으로 합니다.
 
+다음 예제 단계에서는 {{site.data.keyword.cloud}} API 또는 CLI를 사용하여 가상 사설 클라우드(VPC)를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-getting-started-with-ibm-cloud-virtual-private-cloud-infrastructure) 및 [API로 VPC 설정](https://{DomainName}/docs/infrastructure/vpc?topic=vpc-creating-a-vpc-using-the-rest-apis)을 참조하십시오.
+
 ## 예제 단계
-원격 Vyatta 피어에 대한 연결의 토폴로지는 두 VPC 사이에 VPN 연결을 작성하는 것과 유사합니다. 단, 한 측이 Vyatta 장치로 대체됩니다.
+원격 Vyatta 피어에 대한 연결의 토폴로지는 두 {{site.data.keyword.cloud}} VPC 사이에 VPN 연결을 작성하는 것과 유사합니다. 단, 한 측이 Vyatta 장치로 대체됩니다.
 
 ![여기에 이미지 설명 입력](images/vpc-vpn-vy-figure.png)
 
@@ -102,5 +105,3 @@ commit
 IBM Cloud 콘솔을 통해 연결 상태를 확인할 수 있습니다. 또한 VSI를 사용하여 사이트에서 사이트로 `ping`을 시도할 수 있습니다.
 
 ![여기에 이미지 설명 입력](images/vpc-vpn-vy-status.png)
-
-다음 예제 단계에서는 IBM Cloud API 또는 CLI를 사용하여 VPC를 작성하는 전제조건 단계를 건너뜁니다. 자세한 정보는 [시작하기](../vpc/getting-started.html) 및 [API로 VPC 설정](../vpc/example-code.html)을 참조하십시오.

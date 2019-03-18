@@ -17,6 +17,7 @@ lastupdated: "2019-02-11"
 {:DomainName: data-hd-keyref="DomainName"}
 
 # Initiation à la mise en réseau pour le cloud privé virtuel
+{: #getting-started-with-networking-for-virtual-private-cloud}
 
 
 IBM acceptera un nombre limité de clients pour un programme d'accès en avant-première à VPC qui commencera début avril 2019 ; l'accès élargi ne sera ouvert que dans les mois qui suivront. Si votre organisation souhaite avoir accès à IBM Virtual Private Cloud, veuillez remplir ce [formulaire de nomination](https://cloud.ibm.com/vpc){: new_window} et un interlocuteur IBM entrera en contact avec vous concernant la procédure à suivre.
